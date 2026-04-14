@@ -19,6 +19,8 @@ const missionPoints = [
   'Delivering high quality transport services at affordable prices.',
 ];
 
+const MSI_LOGO = 'https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/17e92797d_generated_image.png';
+
 export default function ValuesSection({ servicesImage }) {
   return (
     <section id="values" className="relative py-24 lg:py-32 px-6 lg:pl-32 lg:pr-16">
@@ -55,7 +57,7 @@ export default function ValuesSection({ servicesImage }) {
                   className="border border-border p-6 hover:border-primary/40 transition-colors duration-300"
                 >
                   <div className="flex items-start gap-3">
-                    <Icon className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+                    <img src={MSI_LOGO} alt="" className="w-5 h-5 object-contain flex-shrink-0 mt-0.5 opacity-85" />
                     <div>
                       <p className="font-mono text-[9px] text-muted-foreground tracking-widest mb-2">VAL_{value.code}</p>
                       <p className="font-inter text-sm text-foreground leading-snug">{value.title}</p>
@@ -78,7 +80,7 @@ export default function ValuesSection({ servicesImage }) {
               <div className="space-y-4">
                 {missionPoints.map((point, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <span className="font-mono text-[10px] text-primary mt-1">{String(i + 1).padStart(2, '0')}</span>
+                    <img src={MSI_LOGO} alt="" className="w-5 h-5 object-contain flex-shrink-0 mt-0.5 opacity-85" />
                     <p className="font-inter text-sm text-muted-foreground leading-[1.7]">{point}</p>
                   </div>
                 ))}

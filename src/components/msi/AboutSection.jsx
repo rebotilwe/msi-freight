@@ -1,67 +1,74 @@
-import { CheckCircle2 } from "lucide-react";
+import React from 'react';
+import { motion } from 'framer-motion';
 
-export default function About() {
+export default function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Image */}
-          <div className="relative">
-            <div className="absolute -top-4 -left-4 w-24 h-24 bg-brand-red opacity-10 rounded-lg" />
-            <img
-              src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80"
-              alt="MSI Freight operations"
-              className="w-full h-80 md:h-96 object-cover rounded-lg shadow-2xl relative z-10"
-            />
-            {/* Accent bar */}
-            <div className="absolute bottom-0 left-0 w-1/2 h-1 bg-brand-red z-20" />
-            {/* Badge overlay */}
-            <div
-              className="absolute -bottom-6 -right-6 bg-white shadow-xl rounded-lg p-5 z-20"
-              style={{ border: "1px solid #f0f0f0" }}
-            >
-              <div className="text-brand-red font-barlow font-extrabold text-3xl">2019</div>
-              <div className="text-gray-500 text-xs tracking-wide">Est. Year</div>
-            </div>
-          </div>
+    <section id="about" className="relative py-24 lg:py-32 px-6 lg:pl-32 lg:pr-16">
+      <div className="grid-overlay absolute inset-0" />
+      
+      <div className="relative max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <p className="font-mono text-xs text-primary tracking-[0.3em] mb-4">
+            SEC_01 // COMPANY PROFILE
+          </p>
+          <h2 className="font-archivo text-3xl md:text-5xl text-foreground uppercase tracking-tight mb-12">
+            ABOUT MSI FREIGHT
+          </h2>
+        </motion.div>
 
-          {/* Content */}
-          <div>
-            <div className="inline-block bg-brand-red/10 text-brand-red text-xs font-semibold px-3 py-1 rounded tracking-widest uppercase mb-4">
-              About MSI Freight
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="space-y-6"
+          >
+            <p className="font-inter text-foreground/90 text-base leading-[1.8]">
+              MSI Transport was established in 2019, registered as MSI Freight (PTY) LTD, sister company of MSI Plant Hire (PTY) LTD. A successful plant hire started off from humble beginnings and has grown substantially, catering for an ever-increasing demand for its quality services.
+            </p>
+            <p className="font-inter text-muted-foreground text-base leading-[1.8]">
+              MSI Freight is a well-established road Freight transport and Courier Company. Starting with the acquisition of a small truck, transporting a variety of general Cargo and Goods, the business expanded due to its professional Transport Services in the Road Freight Industry, by having the customer's best interest at heart.
+            </p>
+            
+            <div className="pt-6 border-t border-border">
+              <p className="font-mono text-xs text-muted-foreground tracking-wider mb-3">COMPANY REGISTRATION</p>
+              <p className="font-mono text-sm text-foreground">2022/221548/07</p>
+              <p className="font-mono text-xs text-muted-foreground tracking-wider mt-4 mb-3">VAT REGISTRATION</p>
+              <p className="font-mono text-sm text-foreground">4590302651</p>
             </div>
-            <h2 className="font-barlow font-extrabold text-4xl md:text-5xl text-secondary leading-tight mb-6">
-              A TRUSTED NAME IN
-              <span className="text-brand-red block">ROAD FREIGHT</span>
-            </h2>
-            <p className="text-gray-600 leading-relaxed mb-6">
-              MSI Transport was established in 2019, registered as MSI Freight (PTY) LTD,
-              sister company of MSI Plant Hire (PTY) LTD. Starting with a small truck
-              transporting general cargo and goods, the business expanded rapidly due to
-              its professional transport services in the Road Freight Industry.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-8">
-              MSI Freight has the customer's best interest at heart, offering a well-established
-              road freight transport and courier service that caters to an ever-increasing demand
-              for quality logistics services across Southern Africa.
-            </p>
+          </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {[
-                "B-BBEE Compliant Company",
-                "Domestic & Cross-Border",
-                "15+ Years Management Experience",
-                "Customs Regulation Expertise",
-                "Fully Insured Fleet",
-                "Sister Company: MSI Plant Hire",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-brand-red flex-shrink-0" />
-                  <span className="text-gray-700 text-sm font-medium">{item}</span>
-                </div>
-              ))}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="space-y-8"
+          >
+            <div className="border border-border p-8">
+              <p className="font-mono text-xs text-primary tracking-[0.3em] mb-4">EXECUTIVE PROFILE</p>
+              <h3 className="font-archivo text-xl text-foreground uppercase mb-4">MR MOHAMED AKBAR</h3>
+              <p className="font-mono text-xs text-muted-foreground mb-4">MANAGING DIRECTOR</p>
+              <p className="font-inter text-muted-foreground text-sm leading-[1.8]">
+                Mr Mohamed Akbar is managing director of MSI FREIGHT & MSI PLANT HIRE, and has been instrumental in the success of the business. Together the management have more than 15 years' experience within the transport industry. Mr Akbar will continue to tap into his resilience and determination which is the driving force behind the business growth.
+              </p>
             </div>
-          </div>
+
+            <div className="border border-border p-8">
+              <p className="font-mono text-xs text-primary tracking-[0.3em] mb-4">OPERATIONS</p>
+              <h3 className="font-archivo text-xl text-foreground uppercase mb-4">MR MOHAMED AKBAR</h3>
+              <p className="font-mono text-xs text-muted-foreground mb-4">OPERATIONS MANAGER</p>
+              <p className="font-inter text-muted-foreground text-sm leading-[1.8]">
+                From driver to operations manager, he is well equipped and experienced. Through his passion and commitment he has been able to continually exceed customer expectations and deliver professional quality services.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -39,8 +39,8 @@ export default function SideNav() {
     <>
       {/* Desktop Sidebar */}
       <nav className="hidden lg:flex fixed left-0 top-0 bottom-0 w-20 flex-col items-center justify-between py-8 z-50 border-r border-border bg-background/95 backdrop-blur-sm">
-        <div className="font-archivo text-primary text-lg tracking-wider">
-          MSI
+        <div className="flex items-center justify-center">
+          <img src="https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/17e92797d_generated_image.png" alt="MSI Freight" className="w-12 h-12 object-contain" />
         </div>
 
         <div className="flex flex-col items-center gap-6">
@@ -71,7 +71,7 @@ export default function SideNav() {
 
       {/* Mobile Header */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 py-4 bg-background/95 backdrop-blur-sm border-b border-border">
-        <span className="font-archivo text-primary text-lg">MSI</span>
+        <img src="https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/17e92797d_generated_image.png" alt="MSI Freight" className="h-8 object-contain" />
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="text-foreground p-2 focus:outline-none focus:ring-2 focus:ring-primary"

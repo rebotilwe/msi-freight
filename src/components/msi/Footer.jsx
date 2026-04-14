@@ -8,15 +8,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-brand-red rounded flex items-center justify-center">
-                <Truck className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <div className="font-barlow font-extrabold text-xl tracking-wider text-white">
-                  MSI <span className="text-brand-red">FREIGHT</span>
-                </div>
-                <div className="text-white/40 text-[10px] tracking-widest uppercase">(PTY) LTD</div>
-              </div>
+              <img 
+                src="https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/17e92797d_generated_image.png" 
+                alt="MSI Freight" 
+                className="h-12 object-contain" 
+              />
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">
               Road Freight Transport & Courier Company. Established in 2019, delivering

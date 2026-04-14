@@ -47,6 +47,8 @@ const services = [
   },
 ];
 
+const MSI_LOGO = 'https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/17e92797d_generated_image.png';
+
 export default function ServicesSection({ transportImg, warehouseImg, shipImg }) {
   const images = [transportImg, warehouseImg, shipImg];
 
@@ -104,7 +106,7 @@ export default function ServicesSection({ transportImg, warehouseImg, shipImg })
                   <div className="space-y-2 mb-6">
                     {service.details.map((detail, i) => (
                       <div key={i} className="flex items-center gap-3">
-                        <span className="w-1 h-1 bg-primary flex-shrink-0" />
+                        <img src={MSI_LOGO} alt="" className="w-5 h-5 object-contain flex-shrink-0 opacity-80" />
                         <span className="font-mono text-xs text-foreground/80">{detail}</span>
                       </div>
                     ))}

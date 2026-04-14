@@ -9,18 +9,32 @@ const stats = [
   { value: '2019', label: 'ESTABLISHED', code: 'STAT_04' },
 ];
 
+const MSI_LOGO = 'https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/17e92797d_generated_image.png';
+const TRUCK_IMAGES = [
+  'https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/a725e8a17_truck1.jpeg',
+  'https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/e11c17935_truck2.jpg',
+  'https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/52b6004a1_truck3.jpg',
+  'https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/4c894ec7a_truck4.jpg',
+  'https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/875358b8a_truck5.jpg',
+];
+
 export default function FleetSection({ fleetImage }) {
   return (
     <section id="fleet" className="relative py-24 lg:py-32">
-      {/* Full-bleed image */}
+      {/* Full-bleed hero image with logo overlay */}
       <div className="relative h-[50vh] lg:h-[60vh] overflow-hidden">
         <img
           src={fleetImage}
-          alt="MSI Freight fleet of heavy-duty trucks"
+          alt="MSI Freight fleet of South African trucks"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent" />
+
+        {/* MSI Logo overlay on truck image */}
+        <div className="absolute top-6 right-6 lg:top-10 lg:right-10">
+          <img src={MSI_LOGO} alt="MSI Freight" className="w-24 lg:w-36 object-contain drop-shadow-2xl opacity-90" />
+        </div>
         
         {/* Overlay content */}
         <div className="absolute bottom-0 left-0 right-0 px-6 lg:pl-32 lg:pr-16 pb-12">
@@ -37,6 +51,22 @@ export default function FleetSection({ fleetImage }) {
               OPERATIONAL STRENGTH
             </h2>
           </motion.div>
+        </div>
+      </div>
+
+      {/* Truck image grid */}
+      <div className="px-6 lg:pl-32 lg:pr-16 pt-8 pb-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-6xl">
+          {TRUCK_IMAGES.slice(1).map((src, i) => (
+            <div key={i} className="relative overflow-hidden group aspect-video">
+              <img src={src} alt={`MSI Freight truck ${i + 2}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-background/30 group-hover:bg-background/10 transition-colors duration-300" />
+              {/* Logo watermark on each truck */}
+              <div className="absolute bottom-2 right-2 opacity-70">
+                <img src={MSI_LOGO} alt="" className="w-10 object-contain drop-shadow-md" />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
