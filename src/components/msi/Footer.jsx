@@ -1,4 +1,5 @@
 import { Truck, Phone, Mail, MapPin, ExternalLink } from "lucide-react";
+import MSILogo from '../../assets/logo1.png'; // Adjust the filename as needed
 
 export default function Footer() {
   return (
@@ -9,9 +10,9 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <img 
-                src="https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/17e92797d_generated_image.png" 
+                src={MSILogo}
                 alt="MSI Freight" 
-                className="h-12 object-contain" 
+                className="h-16 md:h-20 lg:h-24 object-contain" 
               />
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">

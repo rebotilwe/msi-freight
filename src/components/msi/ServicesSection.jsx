@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Truck, Warehouse, Ship } from 'lucide-react';
+import MSILogo from '../../assets/logo1.png'; // Adjust the filename as needed
 
 const services = [
   {
@@ -46,8 +47,6 @@ const services = [
     footer: 'Company motto — "DO IT RIGHT FIRST TIME"',
   },
 ];
-
-const MSI_LOGO = 'https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/17e92797d_generated_image.png';
 
 export default function ServicesSection({ transportImg, warehouseImg, shipImg }) {
   const images = [transportImg, warehouseImg, shipImg];
@@ -106,7 +105,11 @@ export default function ServicesSection({ transportImg, warehouseImg, shipImg })
                   <div className="space-y-2 mb-6">
                     {service.details.map((detail, i) => (
                       <div key={i} className="flex items-center gap-3">
-                        <img src={MSI_LOGO} alt="" className="w-5 h-5 object-contain flex-shrink-0 opacity-80" />
+                        <img 
+                          src={MSILogo} 
+                          alt="" 
+                          className="w-5 h-5 object-contain flex-shrink-0 opacity-80" 
+                        />
                         <span className="font-mono text-xs text-foreground/80">{detail}</span>
                       </div>
                     ))}

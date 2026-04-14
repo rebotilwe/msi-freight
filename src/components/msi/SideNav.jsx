@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const MSI_LOGO =
-  'https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/17e92797d_generated_image.png';
+import MSILogo from '../../assets/logo1.png'; // Adjust the filename as needed
 
 const navItems = [
   { id: 'hero', label: 'HOME', code: '00' },
@@ -51,7 +49,7 @@ export default function SideNav() {
         {/* Logo */}
         <div className="flex items-center justify-center">
           <img
-            src={MSI_LOGO}
+            src={MSILogo}
             alt="MSI Freight"
             className="w-12 h-12 object-contain"
           />
@@ -108,7 +106,7 @@ export default function SideNav() {
       {/* Mobile Header */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 py-4 bg-background/95 backdrop-blur-sm border-b border-border">
         <img
-          src={MSI_LOGO}
+          src={MSILogo}
           alt="MSI Freight"
           className="h-8 object-contain"
         />

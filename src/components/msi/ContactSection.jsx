@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, Send, CheckCircle, Loader2 } from 'lucide-react';
+import { Phone, Mail, Send, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
 
 export default function ContactSection({ contactImage }) {
-  const [formState, setFormState] = useState('idle');
+  const [formState, setFormState] = useState('idle'); // idle, submitting, success, error
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,23 +15,54 @@ export default function ContactSection({ contactImage }) {
 
   const handleChange = (e) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    // Clear error when user starts typing
+    if (formState === 'error') {
+      setFormState('idle');
+      setErrorMessage('');
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormState('submitting');
+    setErrorMessage('');
 
-    const response = await fetch('https://formspree.io/f/xpwpgvgq', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch('https://formspree.io/f/mgorvkqk', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData),
+      });
 
-    if (response.ok) {
-      setFormState('success');
-      setFormData({ name: '', email: '', company: '', projectType: '', message: '' });
-    } else {
-      setFormState('idle');
+      const data = await response.json();
+
+      if (response.ok) {
+        setFormState('success');
+        setFormData({ name: '', email: '', company: '', projectType: '', message: '' });
+        // Reset success message after 5 seconds
+        setTimeout(() => {
+          if (formState === 'success') {
+            setFormState('idle');
+          }
+        }, 5000);
+      } else {
+        // Handle specific error cases
+        if (response.status === 422) {
+          setErrorMessage('Please check your email address and try again.');
+        } else if (response.status === 429) {
+          setErrorMessage('Too many messages. Please try again later.');
+        } else {
+          setErrorMessage(data.error || 'Failed to send message. Please try again.');
+        }
+        setFormState('error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setErrorMessage('Network error. Please check your connection and try again.');
+      setFormState('error');
     }
   };
 
@@ -84,6 +116,14 @@ export default function ContactSection({ contactImage }) {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Error Message */}
+                  {formState === 'error' && errorMessage && (
+                    <div className="border border-red-500/50 bg-red-500/10 p-4 flex items-start gap-3">
+                      <AlertCircle className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+                      <p className="font-inter text-sm text-red-500">{errorMessage}</p>
+                    </div>
+                  )}
+
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="font-mono text-[10px] text-muted-foreground tracking-widest block mb-3">

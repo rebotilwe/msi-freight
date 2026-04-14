@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-const MSI_LOGO =
-  "https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/17e92797d_generated_image.png";
+import MSILogo from '../../assets/logo.1png'; // Adjust the filename as needed
 
 const reasons = [
   {
@@ -49,7 +47,7 @@ export default function WhyChooseUs() {
       {/* Subtle Background Logo */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <img
-          src={MSI_LOGO}
+          src={MSILogo}
           alt="MSI Freight"
           className="w-64 lg:w-[500px] opacity-5 object-contain"
         />
@@ -106,7 +104,7 @@ export default function WhyChooseUs() {
                 {/* Logo instead of icon */}
                 <div className="mb-4">
                   <img
-                    src={MSI_LOGO}
+                    src={MSILogo}
                     alt=""
                     className="w-6 h-6 object-contain opacity-80"
                   />
