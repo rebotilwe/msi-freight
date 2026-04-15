@@ -6,8 +6,8 @@ import Truck1 from '../../assets/truck6.jpeg';
 import Truck2 from '../../assets/truck12.jpeg';
 import Truck3 from '../../assets/truck7.jpeg';
 import Truck4 from '../../assets/truck8.jpeg';
-import Truck5 from '../../assets/truck9.jpeg';
-import Truck6 from '../../assets/truck10.jpeg';
+import Truck5 from '../../assets/img4.jpeg';
+import Truck6 from '../../assets/img7.jpeg';
 
 const stats = [
   { value: '15+', label: 'YEARS EXPERIENCE', code: 'STAT_01' },

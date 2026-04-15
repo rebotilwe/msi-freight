@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import MSILogo from '../../assets/logo1.png';
 
-const MSI_LOGO =
-  'https://media.base44.com/images/public/69ddf7077879d1ccdcdfd7c0/17e92797d_generated_image.png';
+// ✅ Add 2 images (you can change these)
+import AboutImg1 from '../../assets/img2.jpeg';
+import AboutImg2 from '../../assets/img6.jpeg';
 
 export default function AboutSection() {
   return (
@@ -14,7 +16,7 @@ export default function AboutSection() {
       {/* Subtle Background Logo */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <img
-          src={MSI_LOGO}
+          src={MSILogo}
           alt="MSI Freight"
           className="w-64 lg:w-[500px] opacity-5 object-contain"
         />
@@ -50,28 +52,38 @@ export default function AboutSection() {
             className="space-y-6"
           >
             <p className="font-inter text-foreground/90 text-base leading-[1.8]">
-              MSI Transport was established in 2019, registered as MSI Freight (PTY) LTD, sister company of MSI Plant Hire (PTY) LTD. A successful plant hire started off from humble beginnings and has grown substantially, catering for an ever-increasing demand for its quality services.
+              MSI Transport was established in 2019, registered as MSI Freight (PTY) LTD, sister company of MSI Plant Hire (PTY) LTD.
             </p>
 
             <p className="font-inter text-muted-foreground text-base leading-[1.8]">
-              MSI Freight is a well-established road Freight transport and Courier Company. Starting with the acquisition of a small truck, transporting a variety of general Cargo and Goods, the business expanded due to its professional Transport Services in the Road Freight Industry, by having the customer's best interest at heart.
+              MSI Freight is a well-established road Freight transport and Courier Company, growing through professional service and customer-first operations.
             </p>
 
+            {/* 🔥 NEW: IMAGE GRID */}
+            <div className="grid grid-cols-2 gap-4 pt-6">
+              <img
+                src={AboutImg1}
+                alt="Warehouse operations"
+                className="rounded-lg object-cover h-32 w-full"
+              />
+              <img
+                src={AboutImg2}
+                alt="Logistics operations"
+                className="rounded-lg object-cover h-32 w-full"
+              />
+            </div>
+
             {/* Registration Info */}
-            <div className="pt-6 border-t border-border">
-              <p className="font-mono text-xs text-muted-foreground tracking-wider mb-3">
+    <div className="pt-6 border-t border-border text-center md:text-left">
+              <p className="font-mono text-xs text-muted-foreground mb-2">
                 COMPANY REGISTRATION
               </p>
-              <p className="font-mono text-sm text-foreground">
-                2022/221548/07
-              </p>
+              <p className="font-mono text-sm">2022/221548/07</p>
 
-              <p className="font-mono text-xs text-muted-foreground tracking-wider mt-4 mb-3">
+              <p className="font-mono text-xs text-muted-foreground mt-4 mb-2">
                 VAT REGISTRATION
               </p>
-              <p className="font-mono text-sm text-foreground">
-                4590302651
-              </p>
+              <p className="font-mono text-sm">4590302651</p>
             </div>
           </motion.div>
 
@@ -85,40 +97,40 @@ export default function AboutSection() {
           >
 
             {/* Card 1 */}
-            <div className="border border-border p-8 hover:border-primary/50 transition-colors">
-              <p className="font-mono text-xs text-primary tracking-[0.3em] mb-4">
+            <div className="border border-border p-8 hover:border-primary/50 transition">
+              <p className="font-mono text-xs text-primary mb-4">
                 EXECUTIVE PROFILE
               </p>
 
-              <h3 className="font-archivo text-xl text-foreground uppercase mb-4">
+              <h3 className="font-archivo text-xl mb-2">
                 MR MOHAMED AKBAR
               </h3>
 
-              <p className="font-mono text-xs text-muted-foreground mb-4">
+              <p className="text-xs text-muted-foreground mb-4">
                 MANAGING DIRECTOR
               </p>
 
-              <p className="font-inter text-muted-foreground text-sm leading-[1.8]">
-                Mr Mohamed Akbar is managing director of MSI FREIGHT & MSI PLANT HIRE, and has been instrumental in the success of the business. Together the management have more than 15 years' experience within the transport industry.
+              <p className="text-sm text-muted-foreground leading-[1.8]">
+                Over 15 years of experience in the transport industry driving business success.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="border border-border p-8 hover:border-primary/50 transition-colors">
-              <p className="font-mono text-xs text-primary tracking-[0.3em] mb-4">
+            <div className="border border-border p-8 hover:border-primary/50 transition">
+              <p className="font-mono text-xs text-primary mb-4">
                 OPERATIONS
               </p>
 
-              <h3 className="font-archivo text-xl text-foreground uppercase mb-4">
+              <h3 className="font-archivo text-xl mb-2">
                 MR MOHAMED AKBAR
               </h3>
 
-              <p className="font-mono text-xs text-muted-foreground mb-4">
+              <p className="text-xs text-muted-foreground mb-4">
                 OPERATIONS MANAGER
               </p>
 
-              <p className="font-inter text-muted-foreground text-sm leading-[1.8]">
-                From driver to operations manager, he is well equipped and experienced. Through his passion and commitment he has been able to continually exceed customer expectations.
+              <p className="text-sm text-muted-foreground leading-[1.8]">
+                Experienced in logistics operations with a strong focus on efficiency and service excellence.
               </p>
             </div>
 

@@ -13,7 +13,7 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative h-screen w-full overflow-hidden">
 
-      {/* Background Image with subtle zoom feel */}
+      {/* Background Image */}
       <motion.div
         className="absolute inset-0"
         initial={{ scale: 1 }}
@@ -26,25 +26,17 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
         />
 
+        {/* overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
       </motion.div>
 
-      {/* Center watermark logo */}
+      {/* 🔥 Center watermark logo (fixed opacity) */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <img
           src={MSILogo}
           alt="MSI Freight"
-          className="w-56 lg:w-72 opacity-8"
-        />
-      </div>
-
-      {/* Top right logo */}
-      <div className="absolute top-6 right-6 lg:top-10 lg:right-10">
-        <img
-          src={MSILogo}
-          alt="MSI Freight"
-          className="w-20 lg:w-28 object-contain opacity-80"
+          className="w-56 lg:w-72 opacity-[0.08]"
         />
       </div>
 
@@ -74,19 +66,21 @@ export default function HeroSection() {
 
           {/* CTAs */}
           <div className="flex items-center gap-6 mt-10">
+
             <button
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="font-mono text-sm bg-primary text-primary-foreground px-8 py-4 tracking-wider hover:bg-primary/90 transition-colors"
+              className="font-mono text-sm bg-primary text-primary-foreground px-8 py-4 tracking-wider hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
             >
               REQUEST QUOTE
             </button>
 
             <button
               onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="font-mono text-sm text-foreground border border-border px-8 py-4 tracking-wider hover:border-primary hover:text-primary transition-colors"
+              className="font-mono text-sm text-foreground border border-border px-8 py-4 tracking-wider hover:border-primary hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
             >
               VIEW SERVICES
             </button>
+
           </div>
         </motion.div>
 
@@ -96,6 +90,7 @@ export default function HeroSection() {
           className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors"
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
+          aria-label="Scroll down"
         >
           <ChevronDown size={24} />
         </motion.button>
@@ -105,6 +100,7 @@ export default function HeroSection() {
       <div className="hidden lg:block absolute top-8 right-8 font-mono text-[10px] text-muted-foreground tracking-widest">
         EST. 2019 // SOUTH AFRICA
       </div>
+
     </section>
   );
 }
