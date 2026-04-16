@@ -134,7 +134,7 @@ export default function FleetSection() {
             },
             {
               title: '24/7 OPERATIONS',
-              desc: 'Round-the-clock logistics ensuring timely delivery across all routes.',
+desc: 'Round the clock logistics ensuring timely delivery across all routes.',
             },
             {
               title: 'STRATEGIC LOCATIONS',
