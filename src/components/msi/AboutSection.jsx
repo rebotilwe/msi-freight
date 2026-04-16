@@ -107,11 +107,11 @@ export default function AboutSection() {
                 MANAGING DIRECTOR & OPERATIONS LEAD
               </p>
 
-              <p className="text-sm text-muted-foreground leading-[1.8]">
-                With over 15 years of experience in the transport industry, Mr Mohamed Akbar has been instrumental in building and growing MSI Freight. 
-                From operational execution to strategic leadership, his hands-on experience — starting from driver level to management — enables the company 
-                to consistently deliver efficient, reliable, and customer-focused logistics solutions.
-              </p>
+             <p className="text-sm text-muted-foreground leading-[1.8]">
+  With over 15 years of experience in the transport industry, Mr Mohamed Akbar has been instrumental in building and growing MSI Freight. 
+  From operational execution to strategic leadership, his hands on experience starting from driver level to management enables the company 
+  to consistently deliver efficient, reliable, and customer focused logistics solutions.
+</p>
 
             </div>
           </motion.div>

@@ -60,9 +60,9 @@ export default function HeroSection() {
             <span className="text-primary">THE INVISIBLE</span>
           </h1>
 
-          <p className="font-inter text-muted-foreground text-base md:text-lg mt-6 max-w-xl leading-relaxed">
-            Road Freight Transport & Courier Services — Domestic and Cross-Border Logistics Since 2019
-          </p>
+         <p className="font-inter text-muted-foreground text-base md:text-lg mt-6 max-w-xl leading-relaxed">
+  Road Freight Transport & Courier Services. Domestic and Cross Border Logistics Since 2019
+</p>
 
           {/* CTAs */}
           <div className="flex items-center gap-6 mt-10">

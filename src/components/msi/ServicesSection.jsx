@@ -16,7 +16,7 @@ const services = [
     image: TransportImg,
     title: 'TRANSPORT DIVISION',
     description:
-      'Full spectrum of services for all transportation requirements — domestic or cross-border.',
+      'Full spectrum of services for all transportation requirements, domestic or cross-border.',
     details: [
       'Bonded Transport',
       'Containerized Transport',
