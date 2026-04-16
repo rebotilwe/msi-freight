@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import MSILogo from '../../assets/logo.1png'; // Adjust the filename as needed
+import MSILogo from '../../assets/logo1.png';
+import SAFlag from '../../assets/SAFlag.jpg'; // ✅ your local flag image
 
 const reasons = [
   {
@@ -44,7 +45,7 @@ export default function WhyChooseUs() {
       {/* Grid Overlay */}
       <div className="grid-overlay absolute inset-0" />
 
-      {/* Subtle Background Logo */}
+      {/* Background Logo */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <img
           src={MSILogo}
@@ -56,7 +57,7 @@ export default function WhyChooseUs() {
       <div className="relative max-w-6xl">
         <div className="grid md:grid-cols-2 gap-16 items-start">
 
-          {/* Left Content */}
+          {/* LEFT SIDE */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -78,6 +79,29 @@ export default function WhyChooseUs() {
               partner you can rely on.
             </p>
 
+            {/* 🇿🇦 SA FLAG BLOCK */}
+            <div className="relative overflow-hidden rounded-xl border border-border mb-10 group">
+              <img
+                src={SAFlag}
+                alt="South African Flag"
+                className="w-full h-32 object-cover opacity-70 group-hover:scale-105 transition duration-700"
+              />
+
+              {/* overlay */}
+              <div className="absolute inset-0 bg-black/50" />
+
+              {/* content */}
+              <div className="absolute inset-0 flex flex-col justify-center px-6">
+                <p className="font-mono text-xs text-primary tracking-widest mb-2">
+                  SOUTH AFRICAN BASED
+                </p>
+                <p className="font-inter text-sm text-white">
+                  Proudly operating within South Africa and compliant with local industry standards.
+                </p>
+              </div>
+            </div>
+
+            {/* CTA */}
             <button
               onClick={() =>
                 document
@@ -90,7 +114,7 @@ export default function WhyChooseUs() {
             </button>
           </motion.div>
 
-          {/* Right Grid */}
+          {/* RIGHT GRID */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {reasons.map((item, index) => (
               <motion.div
@@ -101,7 +125,6 @@ export default function WhyChooseUs() {
                 transition={{ delay: index * 0.1 }}
                 className="group p-6 border border-border hover:border-primary/40 transition-all duration-300"
               >
-                {/* Logo instead of icon */}
                 <div className="mb-4">
                   <img
                     src={MSILogo}
@@ -120,6 +143,7 @@ export default function WhyChooseUs() {
               </motion.div>
             ))}
           </div>
+
         </div>
       </div>
     </section>
